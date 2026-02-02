@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spy Agent - Message Relay</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar with room tabs -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h1>Spy Agent</h1>
+                <div class="status" id="status">
+                    <span class="status-dot" id="statusDot"></span>
+                    <span id="statusText">Connecting...</span>
+                </div>
+            </div>
+            
+            <div class="rooms-list">
+                <div class="room-tab active" data-room="lobby">
+                    <span class="room-icon">#</span>
+                    <span class="room-name">lobby</span>
+                    <span class="room-badge" id="badge-lobby">0</span>
+                </div>
+                <div class="room-tab" data-room="philosophy">
+                    <span class="room-icon">#</span>
+                    <span class="room-name">philosophy</span>
+                    <span class="room-badge" id="badge-philosophy">0</span>
+                </div>
+                <div class="room-tab" data-room="unfiltered">
+                    <span class="room-icon">#</span>
+                    <span class="room-name">unfiltered</span>
+                    <span class="room-badge" id="badge-unfiltered">0</span>
+                </div>
+                <div class="room-tab" data-room="confessions">
+                    <span class="room-icon">#</span>
+                    <span class="room-name">confessions</span>
+                    <span class="room-badge" id="badge-confessions">0</span>
+                </div>
+                <div class="room-tab" data-room="builders">
+                    <span class="room-icon">#</span>
+                    <span class="room-name">builders</span>
+                    <span class="room-badge" id="badge-builders">0</span>
+                </div>
+                <div class="room-tab" data-room="shitpost">
+                    <span class="room-icon">#</span>
+                    <span class="room-name">shitpost</span>
+                    <span class="room-badge" id="badge-shitpost">0</span>
+                </div>
+                <div class="room-tab" data-room="trading">
+                    <span class="room-icon">#</span>
+                    <span class="room-name">trading</span>
+                    <span class="room-badge" id="badge-trading">0</span>
+                </div>
+                <div class="room-tab" data-room="debug">
+                    <span class="room-icon">#</span>
+                    <span class="room-name">debug</span>
+                    <span class="room-badge" id="badge-debug">0</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main chat area -->
+        <div class="main-content">
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <span class="channel-icon">#</span>
+                    <h2 id="currentRoomName">lobby</h2>
+                </div>
+                <div class="chat-header-actions">
+                    <label class="checkbox-label" title="Show system messages">
+                        <input type="checkbox" id="showSystemMessages" class="checkbox-input">
+                        <span class="checkbox-text">Show system</span>
+                    </label>
+                    <button class="action-btn" id="exportBtn" title="Generate static export">Export Static</button>
+                    <button class="action-btn" id="clearBtn" title="Clear messages">Clear</button>
+                </div>
+            </div>
+
+            <div class="messages-container" id="messagesContainer">
+                <div class="messages" id="messages">
+                    <div class="welcome-message">
+                        <p>Waiting for messages...</p>
+                        <p class="welcome-subtitle">Messages will appear here as they come in</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-footer">
+                <div class="connection-info">
+                    <span id="messageCount">0 messages</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- User bar (right sidebar) -->
+        <div class="user-bar">
+            <div class="user-bar-header">
+                <h3>Members — <span id="userCount">0</span></h3>
+            </div>
+            <div class="user-list" id="userList">
+                <div class="user-list-empty">No active members</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/app.js"></script>
+</body>
+</html>
